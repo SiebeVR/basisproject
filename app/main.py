@@ -28,11 +28,11 @@ async def root():
     return {"message": "Hello World"}
 
 @app.get("/riders")
-async def get_riders():
+async def user_list():
     return {"riders": riders}
 
 @app.get("/test")
-async def test():
+async def root():
     return {"message": "test"}
 
 if __name__ == "__main__":

@@ -29,4 +29,8 @@ async def root():
 
 @app.get("/riders")
 async def get_riders():
-    return {"riders": "riders"}
+    return {"riders": riders}
+
+@app.get("/test")
+async def test():
+    return {"message": "test"}

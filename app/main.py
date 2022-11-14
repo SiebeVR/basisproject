@@ -25,7 +25,7 @@ riders.append(Rider(naam="Aleksandr Vlasov", leeftijd=26, land="Rusland", ploeg=
 
 @app.get("/")
 async def root():
-    return {riders}
+    return {"message": "Hello World"}
 
 @app.get("/riders")
 async def get_riders():

@@ -23,13 +23,13 @@ riders.append(Rider(naam="Jonas Vingegaard", leeftijd=25, land="Denemarken", plo
 riders.append(Rider(naam="Aleksandr Vlasov", leeftijd=26, land="Rusland", ploeg="BORA-Hansgrohe", geboortedatum="23-04-1996", gewicht=68, lengte=186,punten=2105))
 
 @app.get("/test")
-async def root():
+async def test():
     return {"message": "test"}
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Hello World1"}
 
 @app.get("/riders")
-async def user_list():
+async def get_riders():
     return {"riders": riders}

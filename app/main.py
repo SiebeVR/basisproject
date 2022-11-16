@@ -26,6 +26,12 @@ async def root():
 
 @app.get("/riders/")
 async def get_riders():
+    board = []
+    board = riders.sort()
+    return {board}
+    
+@app.get("/test/")
+async def get_riders():
     return {riders}
 
 @app.get("/rider/{id}")

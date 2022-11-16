@@ -36,11 +36,17 @@ async def get_leaderboard():
     topbord = Sorteer(riders)
     return {topbord}
 
-@app.get("/rider/{id}")
+@app.get("/riders")
+async def get_riders():
+    return {riders}
+
+@app.get("/rider/")
 async def get_rider(id: int):
     for i in riders:
         if i.id == id:
-            return {i}
+            return i
+    return("Rider not found")
+
 
 @app.post("/addrider/")
 async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):

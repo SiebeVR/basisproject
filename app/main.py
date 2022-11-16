@@ -14,9 +14,7 @@ class Rider(BaseModel):
 
 def Sorteer(lijst):
     sortedlist = lijst.sort(Rider(id))
-    for i in sortedlist:
-        print(i)
-    return lijst
+    return {sortedlist}
 
 
 riders = []
@@ -40,13 +38,12 @@ async def get_leaderboard():
 async def get_riders():
     return {riders}
 
-@app.get("/rider/{riderid}")
-async def get_rider(riderid: int):
+@app.get("/rider/{id}")
+async def get_rider(id: int):
     for i in riders:
-        if riderid.id == id:
+        if i.id == id:
             return i
     return("Rider not found")
-
 
 @app.post("/addrider/")
 async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):

@@ -29,12 +29,12 @@ riders.append(Rider(id=5, naam="Aleksandr Vlasov", leeftijd=26, land="Rusland", 
 async def root():
     return {"This is the home page"}
 
-@app.get("/leaderboard")
+@app.get("/leaderboard/")
 async def get_leaderboard():
     topbord = Sorteer(riders)
     return {topbord}
 
-@app.get("/riders")
+@app.get("/riders/")
 async def get_riders():
     return {riders}
 

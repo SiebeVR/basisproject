@@ -12,7 +12,7 @@ class Rider(BaseModel):
     ploeg: str
     punten: int
 
-def Sorteer(lijst):
+def Sorteer(self, lijst):
     sortedlist = lijst.sort(Rider(id))
     return {sortedlist}
 

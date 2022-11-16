@@ -12,11 +12,6 @@ class Rider(BaseModel):
     ploeg: str
     punten: int
 
-def Sorteer(self, lijst):
-    sortedlist = lijst.sort(Rider(id))
-    return {sortedlist}
-
-
 riders = []
 
 riders.append(Rider(id=1, naam="Tadej Pogačar", leeftijd=24, land="Slovenië", ploeg="UAE Team Emirates", punten=4839))
@@ -28,11 +23,6 @@ riders.append(Rider(id=5, naam="Aleksandr Vlasov", leeftijd=26, land="Rusland", 
 @app.get("/")
 async def root():
     return {"This is the home page"}
-
-@app.get("/leaderboard/")
-async def get_leaderboard():
-    topbord = Sorteer(riders)
-    return {topbord}
 
 @app.get("/riders/")
 async def get_riders():

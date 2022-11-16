@@ -1,8 +1,18 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
+
+origins = ['*']
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Rider(BaseModel):
     id: int
@@ -24,15 +34,14 @@ riders.append(Rider(id=5, naam="Aleksandr Vlasov", leeftijd=26, land="Rusland", 
 async def root():
     return {"This is the home page"}
 
+@app.get("/leaderboard")
+async def sort_riders():
+    riders.sort(key=lambda x: x.punten, reverse=True)
+    return riders
+
 @app.get("/riders")
 async def get_riders():
-    board = []
-    board = riders.sort()
-    return {board}
-
-@app.get("/test")
-async def get_riders():
-    return {riders}
+    return riders
 
 @app.get("/rider/{id}")
 async def get_rider(id: int):

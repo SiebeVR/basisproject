@@ -46,7 +46,7 @@ async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland:
 
 @app.delete("/deleterider/")
 async def delete_rider(riderid: int):
-    riders.remove(Rider(riderid))
+    riders.remove[Rider(riderid)]
     return {"riders": riders}
 
 @app.put("/updaterider/")

@@ -43,3 +43,22 @@ async def get_riders():
 async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):
     riders.append(Rider(id=riderid, naam=ridernaam, leeftijd=riderleeftijd, land=riderland, ploeg=riderploeg, punten=riderpunten))
     return {"riders": riders}
+
+@app.delete("/deleterider/")
+async def delete_rider(riderid: int):
+    for i in riders:
+        if i.id == riderid:
+            riders.remove(i)
+    return {"riders": riders}
+
+@app.put("/updaterider/")
+async def update_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):
+    for i in riders:
+        if i.id == riderid:
+            i.naam = ridernaam
+            i.leeftijd = riderleeftijd
+            i.land = riderland
+            i.ploeg = riderploeg
+            i.punten = riderpunten
+    return {"riders": riders}
+    

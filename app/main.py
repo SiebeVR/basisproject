@@ -44,7 +44,7 @@ async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland:
     riders.append(Rider(id=riderid, naam=ridernaam, leeftijd=riderleeftijd, land=riderland, ploeg=riderploeg, punten=riderpunten))
     return {"riders": riders}
 
-@app.delete("/deleterider/")
+@app.delete("/deleterider/{riderid}")
 async def delete_rider(riderid: int):
     riders.remove[Rider(riderid)]
     return {"riders": riders}

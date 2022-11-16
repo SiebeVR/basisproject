@@ -10,7 +10,6 @@ class Rider(BaseModel):
     leeftijd: int
     land: str
     ploeg: str
-    punten: int
 
 def Sorteer(lijst):
     lijst.sort(Rider(id))
@@ -21,11 +20,11 @@ def Sorteer(lijst):
 
 riders = []
 
-riders.append(Rider(id=1, naam="Tadej Pogačar", leeftijd=24, land="Slovenië", ploeg="UAE Team Emirates", punten=4839))
-riders.append(Rider(id=2, naam="Wout van Aert", leeftijd=28, land="België", ploeg="Jumbo-Visma", punten=3722))
-riders.append(Rider(id=3, naam="Remco Evenepoel", leeftijd=22, land="België", ploeg="Soudal-Quickstep", punten=3602))
-riders.append(Rider(id=4, naam="Jonas Vingegaard", leeftijd=25, land="Denemarken", ploeg="Jumbo-Visma", punten=3317))
-riders.append(Rider(id=5, naam="Aleksandr Vlasov", leeftijd=26, land="Rusland", ploeg="BORA-Hansgrohe", punten=2105))
+riders.append(Rider(id=1, naam="Tadej Pogačar", leeftijd=24, land="Slovenië", ploeg="UAE Team Emirates"))
+riders.append(Rider(id=2, naam="Wout van Aert", leeftijd=28, land="België", ploeg="Jumbo-Visma"))
+riders.append(Rider(id=3, naam="Remco Evenepoel", leeftijd=22, land="België", ploeg="Soudal-Quickstep"))
+riders.append(Rider(id=4, naam="Jonas Vingegaard", leeftijd=25, land="Denemarken", ploeg="Jumbo-Visma"))
+riders.append(Rider(id=5, naam="Aleksandr Vlasov", leeftijd=26, land="Rusland", ploeg="BORA-Hansgrohe"))
 
 @app.get("/")
 async def root():
@@ -41,8 +40,8 @@ async def get_riders():
     return {"riders": riders}
 
 @app.post("/addrider/")
-async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):
-    riders.append(Rider(id=riderid, naam=ridernaam, leeftijd=riderleeftijd, land=riderland, ploeg=riderploeg, punten=riderpunten))
+async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str):
+    riders.append(Rider(id=riderid, naam=ridernaam, leeftijd=riderleeftijd, land=riderland, ploeg=riderploeg))
     return {"riders": riders}
 
 @app.delete("/deleterider/{riderid}")
@@ -51,12 +50,11 @@ async def delete_rider(riderid: int):
     return {"riders": riders}
 
 @app.put("/updaterider/")
-async def update_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):
+async def update_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str):
     for i in riders:
         if i.id == riderid:
             i.naam = ridernaam
             i.leeftijd = riderleeftijd
             i.land = riderland
             i.ploeg = riderploeg
-            i.punten = riderpunten
     return {"riders": riders}

@@ -13,6 +13,7 @@ class Rider(BaseModel):
     punten: int
 
 def Sorteer(lijst):
+    lijst.sort(Rider(id))
     for i in lijst:
         print(i)
     return lijst
@@ -46,7 +47,7 @@ async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland:
 
 @app.delete("/deleterider/{riderid}")
 async def delete_rider(riderid: int):
-    riders.remove[Rider(riderid)]
+    riders.remove[Rider(id = riderid)]
     return {"riders": riders}
 
 @app.put("/updaterider/")

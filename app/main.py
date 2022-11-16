@@ -40,10 +40,10 @@ async def get_leaderboard():
 async def get_riders():
     return {riders}
 
-@app.get("/rider/")
-async def get_rider(id: int):
+@app.get("/rider/{id}")
+async def get_rider(riderid: int):
     for i in riders:
-        if i.id == id:
+        if riderid.id == id:
             return i
     return("Rider not found")
 

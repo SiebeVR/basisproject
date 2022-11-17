@@ -16,6 +16,8 @@
 ## Mogelijke Methods
 
 - Get /riders -> Lijst van alle riders met info
+- Get /leaderboard -> Leaderboard van de renners (Hoogste punten eerst)
+- Get /rider/{riderid} -> opvragen van specifieke rider door middel van zijn ID
 
 
 

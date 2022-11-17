@@ -9,17 +9,16 @@
 
 
 ## Project Thema
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+- Het thema van dit project is wielrennen.
+- Het wielrenseizoen is afgelopen dus nu zijn alle punten van de renners bekend.
 
 
 ## Mogelijke Methods
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+
+- Get /riders
+- Lijst van alle riders
+![image](https://user-images.githubusercontent.com/55507726/202534491-b46166cb-1994-4776-9818-a3d9ee4bf1f4.png)
+
 
 
 ## Screenshots

@@ -21,5 +21,5 @@
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+- Get /riders
+![image](https://user-images.githubusercontent.com/55507726/202534491-b46166cb-1994-4776-9818-a3d9ee4bf1f4.png)

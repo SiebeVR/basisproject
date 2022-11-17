@@ -7,7 +7,7 @@
 * [Project Thema](#project-thema)
 * [Methods](#Methods)
 * [Screenshots](#Screenshots)
-* [Links] (#Links)
+* [Links](#Links)
 
 
 ## Project Thema

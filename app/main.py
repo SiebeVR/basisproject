@@ -5,12 +5,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = ['*']
+origins = ['http://localhost:8000', 'http://127.0.0.1:8000','https://siebevr.github.io/']
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["PUT", "GET", "POST", "DELETE"],
     allow_headers=["*"],
 )
 

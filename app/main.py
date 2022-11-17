@@ -51,6 +51,9 @@ async def get_rider(id: int):
 
 @app.post("/addrider/")
 async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):
+    for rider in riders:
+        if rider.id == riderid or rider.naam == ridernaam:
+            return "Rider already exists"
     riders.append(Rider(id=riderid, naam=ridernaam, leeftijd=riderleeftijd, land=riderland, ploeg=riderploeg, punten=riderpunten))
     return  riders
 

@@ -48,7 +48,6 @@ async def get_rider(id: int):
     for i in riders:
         if i.id == id:
             return i
-    return("Rider not found")
 
 @app.post("/addrider/")
 async def add_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):

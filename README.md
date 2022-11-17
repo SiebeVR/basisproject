@@ -22,9 +22,11 @@
 - GET /leaderboard => Leaderboard van de renners (Hoogste punten eerst)
 - GET /rider/{riderid} => opvragen van specifieke rider door middel van zijn ID
 - POST /addrider/?riderid={riderid}&ridernaam={ridernaam}&riderleeftijd={riderleeftijd}&riderland=riderland}&riderploeg={riderploeg}&riderpunten={riderpunten}
+  
   => Voegt rider toe aan lijst van riders, heeft alle info nodig, mag niet bestaande nummer/naam zijn
 - DELETE /deleterider/?riderid={riderid} => Verwijdert de rider uit de lijst door middel van zijn ID
 - PUT /updaterider/?riderid={riderid}&ridernaam={ridernaam}&riderleeftijd={riderleeftijd}&riderland=riderland}&riderploeg={riderploeg}&riderpunten={riderpunten}
+  
   => Update een rider, heeft alle info nodig
 
 ## Screenshots

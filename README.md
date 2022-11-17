@@ -15,8 +15,7 @@
 
 ## Mogelijke Methods
 
-- Get /riders
-- Lijst van alle riders
+- Get /riders -> Lijst van alle riders met info
 ![image](https://user-images.githubusercontent.com/55507726/202534491-b46166cb-1994-4776-9818-a3d9ee4bf1f4.png)
 
 

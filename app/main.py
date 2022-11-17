@@ -5,12 +5,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = ['https://siebevr.github.io/, http://localhost:8000']
+origins = ['*']
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST, PUT, DELETE"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -68,7 +68,6 @@ async def delete_rider(riderid: int):
 async def update_rider(riderid: int, ridernaam: str, riderleeftijd: int, riderland: str, riderploeg: str, riderpunten: int):
     for i in riders:
         if i.id == riderid:
-            i.naam = ridernaam
             i.leeftijd = riderleeftijd
             i.land = riderland
             i.ploeg = riderploeg

@@ -55,3 +55,4 @@
 - Link naar hosted API: https://main-service-siebevr.cloud.okteto.net/
 - Link naar Front-end repository: https://github.com/SiebeVR/basisproject_frontend
 - Link naar hosted Front-end: https://siebevr.github.io/basisproject_frontend/
+- Link naar OpenAPI docs: https://main-service-siebevr.cloud.okteto.net/docs
